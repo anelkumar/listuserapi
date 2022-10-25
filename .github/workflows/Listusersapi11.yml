@@ -79,8 +79,8 @@ jobs:
        run:|
         artifactName=$(ls *.jar | head -1)
          mvn clean -B package deploy -DmuleDeploy \
-        -Dusername= "$PLATFORM_USERNAME" \
-        -Dpassword= "$PLATFORM_PASSWORD" \ 
+        -Dusername = "$PLATFORM_USERNAME" \
+        -Dpassword = "$PLATFORM_PASSWORD" \ 
         -DskipTests
       
       
