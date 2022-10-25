@@ -83,6 +83,5 @@ jobs:
         -Dpassword = "$PLATFORM_PASSWORD" \ 
         -DskipTests
       
-      
   
 
