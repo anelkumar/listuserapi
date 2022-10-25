@@ -82,7 +82,7 @@ jobs:
         name: artifacts    
       
     - name: Deploy to Sandbox
-         run:|
+       run:|
         artifactName=$(ls *.jar | head -1)
          mvn clean -B package deploy -DmuleDeploy \
         -Dusername= "$PLATFORM_USERNAME" \
