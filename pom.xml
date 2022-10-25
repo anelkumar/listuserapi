@@ -33,8 +33,8 @@
 				<cloudHubDeployment>
 					<muleVersion>4.4.0</muleVersion>
 					<applicationName>userslist-api-cicdtestbed22</applicationName>
-					<username>{env.PLATFORM_USERNAME}</username>
-                    <password>{env.PLATFORM_PASSWORD}</password>
+					<username>${env.PLATFORM_USERNAME}</username>
+                    <password>${env.PLATFORM_PASSWORD}</password>
 					<environment>Sandbox</environment>
 					<workers>1</workers>
 					<workerType>MICRO</workerType>
