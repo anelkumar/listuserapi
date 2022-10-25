@@ -1,10 +1,10 @@
-name: MyCloudhub
+name: MyCloudhub - Build And Deploy
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    
+  workflow_dispatch:    
 
 jobs:
   build:
@@ -15,7 +15,10 @@ jobs:
       PLATFORM_USERNAME: ${{secrets.PLATFORM_USERNAME}}
       PLATFORM_PASSWORD: ${{secrets.PLATFORM_PASSWORD}}
      
-    steps: 
+
+    steps:
+  
+      
     - name: Checkout repository
       uses: actions/checkout@v2
       
@@ -49,7 +52,9 @@ jobs:
       with:
           name: artifacts
           path: target/*.jar        
-           
+      
+       
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -58,6 +63,7 @@ jobs:
       PLATFORM_USERNAME: ${{secrets.PLATFORM_USERNAME}}
       PLATFORM_PASSWORD: ${{secrets.PLATFORM_PASSWORD}}
       
+
     steps:
    
     - name: Checkout repository
@@ -76,7 +82,7 @@ jobs:
         name: artifacts    
       
     - name: Deploy to Sandbox
-       run:|
+      run: |
         artifactName=$(ls *.jar | head -1)
          mvn clean -B package deploy -DmuleDeploy \
         -Dusername = "$PLATFORM_USERNAME" \
