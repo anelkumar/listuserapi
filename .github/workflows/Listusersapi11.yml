@@ -82,6 +82,3 @@ jobs:
         -Dusername = "$PLATFORM_USERNAME" \
         -Dpassword = "$PLATFORM_PASSWORD" \ 
         -DskipTests
-      
-  
-
