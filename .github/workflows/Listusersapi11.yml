@@ -60,8 +60,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       
-      PLATFORM_USERNAME: ${{secrets.PLATFORM_USERNAME}}
-      PLATFORM_PASSWORD: ${{secrets.PLATFORM_PASSWORD}}
+      PLATFORM_USERNAME:${{secrets.PLATFORM_USERNAME}}
+      PLATFORM_PASSWORD:${{secrets.PLATFORM_PASSWORD}}
       
 
     steps:
@@ -85,6 +85,6 @@ jobs:
       run: |
         artifactName=$(ls *.jar | head -1)
          mvn package deploy -DmuleDeploy \
-         -Dusername="$PLATFORM_USERNAME" \
-        -Dpassword="$PLATFORM_PASSWORD" \ 
-        -DskipTests
+          -Dusername="$PLATFORM_USERNAME" \
+          -Dpassword="$PLATFORM_PASSWORD" \ 
+          -DskipTests
