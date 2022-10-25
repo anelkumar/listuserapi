@@ -1,10 +1,10 @@
-name: MyCloudhub - Build And Deploy m
+name: MyCloudhub
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:    
+    
 
 jobs:
   build:
