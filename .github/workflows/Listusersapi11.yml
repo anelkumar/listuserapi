@@ -84,7 +84,7 @@ jobs:
     - name: Deploy to Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-         mvn clean -B package deploy -DmuleDeploy \
+         mvn deploy -DmuleDeploy \
         -Dusername = "$PLATFORM_USERNAME" \
         -Dpassword = "$PLATFORM_PASSWORD" \ 
         -DskipTests
